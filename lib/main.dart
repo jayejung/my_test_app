@@ -1,52 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:my_test_app/constants/consts.dart';
+import 'package:my_test_app/screens/screens.dart';
 
 void main() {
   runApp(MaterialApp(
     title: "My first App demo",
     initialRoute: '/',
     routes: {
-      '/': (context) => MainScreen(),
-      '/qrReader': (context) => QrReaderScreen(),
-    }
+      Consts.mainRoute: (context) => MainScreen(),
+      Consts.qrReaderRoute: (context) => QrReaderScreen(),
+    },
+    theme: ThemeData(
+      colorScheme: const ColorScheme(
+        brightness: Brightness.light,
+        primary: Color(Consts.mainColor),
+        onPrimary: Colors.black,
+        secondary: Colors.grey,
+        onSecondary: Colors.grey,
+        background: Colors.grey,
+        onBackground: Colors.grey,
+        surface: Colors.grey,
+        onSurface: Colors.grey,
+        error: Colors.grey,
+        onError: Colors.grey,
+      ),
+    ),
   ));
 }
 
-class MainScreen extends StatelessWidget {
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Main Screen'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: Text('Launch Screen'),
-          onPressed: () {
-            // 클릭하면 두번째 화면으로 전환 합니다.
-          },
-        ),
-      ),
-    );
-  }
-}
 
-class QrReaderScreen extends StatelessWidget {
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('QrReaderScreen'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-
-          },
-          child: Text('Go Back!'),
-        ),
-      ),
-    );
-  }
-}
