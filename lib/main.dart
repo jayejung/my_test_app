@@ -7,8 +7,9 @@ void main() {
     title: "My first App demo",
     initialRoute: '/',
     routes: {
-      Consts.mainRoute: (context) => MainScreen(),
+      Consts.startRoute: (context) => StartScreen(),
       Consts.qrReaderRoute: (context) => QrReaderScreen(),
+      Consts.qrVerifyRoute: (context) => QrVerifyScreen(),
     },
     theme: ThemeData(
       colorScheme: const ColorScheme(
